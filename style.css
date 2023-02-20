@@ -74,3 +74,8 @@ img {
     max-width: 300px;
   }
 }
+
+a {
+  color: none;
+  text-decoration: none; /* no underline */
+}
