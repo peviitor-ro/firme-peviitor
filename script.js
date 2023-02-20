@@ -4,14 +4,15 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
   .then((response) => response.json())
   .then((data) => {
     data.companies.forEach((collaborator) => {
+      const collaboratorNameCapitalized =
+        collaborator.name.charAt(0).toUpperCase() +
+        collaborator.name.slice(1).toLowerCase();
+      collaborator.name = collaboratorNameCapitalized;
+
       const div = document.createElement("div");
       const title = document.createElement("h2");
       const image = document.createElement("img");
       const link = document.createElement("a");
-
-      const collaboratorNameCapitalized =
-        collaborator.name.charAt(0).toUpperCase() +
-        collaborator.name.slice(1).toLowerCase();
 
       image.src = `./Assets/${collaboratorNameCapitalized}.avif`;
       title.textContent = collaboratorNameCapitalized;
