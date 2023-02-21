@@ -9,13 +9,13 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
       const image = document.createElement("img");
       const link = document.createElement("a");
 
-      console.log(collaborator.name);
+      console.log(collaborator.name, "Date server");
 
       const firstLettertToUppperCase =
         collaborator.name.charAt(0).toUpperCase() +
         collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
 
-      console.log(firstLettertToUppperCase);
+      console.log(firstLettertToUppperCase, "Data modificate");
 
       image.src = `./Assets/${firstLettertToUppperCase}.avif`;
       title.textContent = firstLettertToUppperCase;
