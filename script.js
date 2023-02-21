@@ -15,15 +15,7 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
         collaborator.name.charAt(0).toUpperCase() +
         collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
 
-      console.log(firstLettertToUppperCase, "MODIFIED-DATA");
-
-      const fileName = `${firstLettertToUppperCase}.avif`;
-
-      if (!fileExists(`./Assets/${fileName}`)) {
-        image.src = "./Assets/nologo.png";
-      } else {
-        image.src = `./Assets/${fileName}`;
-      }
+      console.log(firstLettertToUppperCase, "Data modificate");
 
       image.src = `./Assets/${firstLettertToUppperCase}.avif`;
       title.textContent = firstLettertToUppperCase;
