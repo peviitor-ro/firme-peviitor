@@ -9,9 +9,15 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
       const image = document.createElement("img");
       const link = document.createElement("a");
 
-      image.src = `./Assets/${collaborator.name}.avif`;
-      title.textContent = collaborator.name;
-      link.href = `https://peviitor.ro/rezultate?q=${collaborator.name}&country=Rom%C3%A2nia&page=1             `;
+      const firstLettertToUppperCase =
+        collaborator.name.charAt(0).toUpperCase() +
+        collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
+
+      console.log(firstLettertToUppperCase);
+
+      image.src = `./Assets/${firstLettertToUppperCase}.avif`;
+      title.textContent = firstLettertToUppperCase;
+      link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
 
       link.appendChild(image);
       link.appendChild(title);
