@@ -14,10 +14,30 @@ body {
   width: 1320px;
 }
 
-h1 {
+.card-container div {
+  width: calc(25% - 1em);
+  margin-bottom: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card-container img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-container h2 {
+  font-size: 1.3em;
   text-align: center;
-  margin-top: 60px;
-  text-overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1em;
+  margin-bottom: 0;
 }
 
 .input-container {
