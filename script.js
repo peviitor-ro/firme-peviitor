@@ -17,10 +17,10 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
 
       console.log(firstLettertToUppperCase, "MODIFIED-DATA");
 
-      if (firstLettertToUppperCase === `./Assets/${firstLettertToUppperCase}`) {
-        image.src = `./Assets/${firstLettertToUppperCase}.avif`;
+      if (firstLettertToUppperCase !== `./Assets/${firstLettertToUppperCase}`) {
+        image.src = `./Assets/nologo.png`;
       } else {
-        image.src = `./Assets/nologo.avif`;
+        image.src = `./Assets/${firstLettertToUppperCase}.avif`;
       }
 
       image.src = `./Assets/${firstLettertToUppperCase}.avif`;
