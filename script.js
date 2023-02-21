@@ -17,6 +17,12 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
 
       console.log(firstLettertToUppperCase, "MODIFIED-DATA");
 
+      if (firstLettertToUppperCase === `./Assets/${firstLettertToUppperCase}`) {
+        image.src = `./Assets/${firstLettertToUppperCase}.avif`;
+      } else {
+        image.src = `./Assets/nologo.avif`;
+      }
+
       image.src = `./Assets/${firstLettertToUppperCase}.avif`;
       title.textContent = firstLettertToUppperCase;
       link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
