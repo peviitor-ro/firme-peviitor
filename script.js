@@ -18,6 +18,7 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
       console.log(firstLettertToUppperCase, "Data modificate");
 
       image.src = `./Assets/${firstLettertToUppperCase}.avif`;
+      image.alt = `${firstLettertToUppperCase} image`;
       title.textContent = firstLettertToUppperCase;
       link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
 
