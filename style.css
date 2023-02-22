@@ -1,6 +1,6 @@
 body {
   background-color: #ffd700;
-  height: 1500vh;
+  height: auto;
   display: flex;
   justify-content: center;
 }
