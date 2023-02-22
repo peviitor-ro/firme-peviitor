@@ -41,6 +41,11 @@ input {
   font-weight: 700;
 }
 
+input::placeholder {
+  font-weight: 800;
+  color: black;
+}
+
 .card-container {
   display: flex;
   -webkit-user-select: none;
