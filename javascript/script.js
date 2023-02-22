@@ -1,9 +1,11 @@
+"use strict";
+
 const cardContainer = document.querySelector(".card-container");
 const selectColaboratori = document.querySelector(".count-colaboratori");
-const searchInput = document.querySelector(".search");
+const searchInput = document.querySelector("#searchBar");
 
 searchInput.addEventListener("input", (e) => {
-  const value = e.target.value;
+  const value = e.target.value.toLowerCase().replace(/\s+/g, "");
 });
 
 fetch("https://api.peviitor.ro/v1/companies/?count=false")
