@@ -4,6 +4,10 @@ body {
   justify-content: center;
 }
 
+* {
+  font-family: "Oswald", sans-serif;
+}
+
 .container {
   background-color: #ffffff;
   display: flex;
@@ -14,17 +18,17 @@ body {
 }
 
 h1 {
-  text-align: center;
-  margin-top: 60px;
+  text-align: start;
+  margin: 10px 0;
+  font-size: 20px;
 }
 
 h2 {
-  text-align: center;
-  margin-top: 60px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 240px;
+  margin: 0 0 60px 0 !important;
 }
 
 .search-wrapper {
@@ -35,15 +39,21 @@ input {
   height: 40px;
   width: 920px;
   padding: 0 15px;
-  margin-top: 30px;
+  margin-top: 50px;
   border-radius: 5px;
   font-size: 15px;
   font-weight: 700;
 }
 
 input::placeholder {
-  font-weight: 800;
   color: black;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 .card-container {
@@ -53,7 +63,6 @@ input::placeholder {
   user-select: none;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 30px 0;
   margin-top: 30px;
   max-width: 80%;
 }
@@ -62,12 +71,17 @@ img {
   width: 245px;
   height: 150px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .card-container h2 {
   text-align: center;
   margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 @media screen and (max-width: 1100px) {
@@ -84,11 +98,6 @@ img {
 
 @media screen and (max-width: 620px) {
   input {
-    max-width: 300px;
+    max-width: 400px;
   }
-}
-
-a {
-  color: none;
-  text-decoration: none;
 }
