@@ -16,7 +16,7 @@ searchInput.addEventListener("input", (e) => {
 fetch("https://api.peviitor.ro/v1/companies/?count=false")
   .then((response) => response.json())
   .then((data) => {
-    selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} companii`;
+    selectColaboratori.textContent = `COLABORATORI PE VIITOR =>  ${data.companies.length}`;
     colaboratori = data.companies;
     displayColaboratori(colaboratori);
   })
@@ -32,16 +32,16 @@ function displayColaboratori(colaboratori) {
     const image = document.createElement("img");
     const link = document.createElement("a");
 
-    const toateimpreunamici = collaborator.name
-      .toLowerCase()
-      .replace(/\s+/g, "");
+    const firstLettertToUppperCase =
+      collaborator.name.charAt(0).toUpperCase() +
+      collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
 
-    image.src = `./Assets/${toateimpreunamici}.avif`;
+    image.src = `./Assets/${firstLettertToUppperCase}.avif`;
     image.onerror = () => {
       image.src = "./Assets/Logonotfound.png";
     };
-    title.textContent = toateimpreunamici;
-    link.href = `https://peviitor.ro/rezultate?q=${toateimpreunamici}&country=Rom%C3%A2nia&page=1             `;
+    title.textContent = firstLettertToUppperCase.toLowerCase();
+    link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
 
     link.appendChild(image);
     link.appendChild(title);
