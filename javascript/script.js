@@ -16,7 +16,7 @@ searchInput.addEventListener("input", (e) => {
 fetch("https://api.peviitor.ro/v1/companies/?count=false")
   .then((response) => response.json())
   .then((data) => {
-    selectColaboratori.textContent = `COLABORATORI PE VIITOR =>  ${data.companies.length}`;
+    selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii`;
     colaboratori = data.companies;
     displayColaboratori(colaboratori);
   })
