@@ -98,6 +98,15 @@ a {
 
 @media screen and (max-width: 620px) {
   input {
-    max-width: 400px;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  input {
+    max-width: 250px;
+  }
+  h1 {
+    font-size: 15px;
   }
 }
