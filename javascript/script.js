@@ -32,15 +32,16 @@ function displayColaboratori(colaboratori) {
     const image = document.createElement("img");
     const link = document.createElement("a");
 
-    const firstLettertToUppperCase =
-      collaborator.name.charAt(0).toUpperCase() +
-      collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
+    const firstLettertToUppperCase = collaborator.name
+      .toLowerCase()
+      .replace(/\s+/g, "");
 
     image.src = `./assets/${firstLettertToUppperCase}.avif`;
+
     image.onerror = () => {
       image.src = "./assets/logonotfound.avif";
     };
-    title.textContent = firstLettertToUppperCase.toLowerCase();
+    title.textContent = firstLettertToUppperCase;
     link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
 
     link.appendChild(image);
