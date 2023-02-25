@@ -1,5 +1,4 @@
 "use strict";
-"use strict";
 
 const cardContainer = document.querySelector(".card-container");
 const selectColaboratori = document.querySelector(".count-colaboratori");
@@ -33,16 +32,16 @@ function displayColaboratori(colaboratori) {
     const image = document.createElement("img");
     const link = document.createElement("a");
 
-    const firstLettertToUppperCase = collaborator.name
-      .toLowerCase()
-      .replace(/\s+/g, "");
+    const firstLettertToUppperCase =
+      collaborator.name.charAt(0).toUpperCase() +
+      collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
 
-    image.src = `./Assets/${firstLettertToUppperCase}.avif`;
+    image.src = `./assets/${firstLettertToUppperCase}.avif`;
     image.onerror = () => {
-      image.src = "./Assets/Logonotfound.avif";
+      image.src = "./assets/Logonotfound.avif";
     };
-    title.textContent = collaborator.name;
-    link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1`;
+    title.textContent = firstLettertToUppperCase.toLowerCase();
+    link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
 
     link.appendChild(image);
     link.appendChild(title);
@@ -50,7 +49,6 @@ function displayColaboratori(colaboratori) {
     cardContainer.appendChild(div);
   });
 }
-
 /*
 
 "use strict";
