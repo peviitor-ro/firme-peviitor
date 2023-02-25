@@ -1,4 +1,5 @@
 "use strict";
+"use strict";
 
 const cardContainer = document.querySelector(".card-container");
 const selectColaboratori = document.querySelector(".count-colaboratori");
@@ -32,14 +33,16 @@ function displayColaboratori(colaboratori) {
     const image = document.createElement("img");
     const link = document.createElement("a");
 
-    const firstLettertToUppperCase = collaborator.name.toLowerCase().replace(/\s+/g, "");
+    const firstLettertToUppperCase = collaborator.name
+      .toLowerCase()
+      .replace(/\s+/g, "");
 
     image.src = `./Assets/${firstLettertToUppperCase}.avif`;
     image.onerror = () => {
       image.src = "./Assets/Logonotfound.avif";
     };
-    title.textContent = firstLettertToUppperCase.toLowerCase();
-    link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
+    title.textContent = collaborator.name;
+    link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1`;
 
     link.appendChild(image);
     link.appendChild(title);
