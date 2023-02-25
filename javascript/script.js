@@ -32,9 +32,7 @@ function displayColaboratori(colaboratori) {
     const image = document.createElement("img");
     const link = document.createElement("a");
 
-    const firstLettertToUppperCase =
-      collaborator.name.charAt(0).toUpperCase() +
-      collaborator.name.slice(1).replace(/\s+/g, "").toLowerCase();
+    const firstLettertToUppperCase = collaborator.name.toLowerCase().replace(/\s+/g, "");
 
     image.src = `./Assets/${firstLettertToUppperCase}.avif`;
     image.onerror = () => {
