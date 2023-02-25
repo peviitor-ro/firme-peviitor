@@ -38,7 +38,7 @@ function displayColaboratori(colaboratori) {
 
     image.src = `./assets/${firstLettertToUppperCase}.avif`;
     image.onerror = () => {
-      image.src = "./assets/Logonotfound.avif";
+      image.src = "./assets/logonotfound.avif";
     };
     title.textContent = firstLettertToUppperCase.toLowerCase();
     link.href = `https://peviitor.ro/rezultate?q=${firstLettertToUppperCase}&country=Rom%C3%A2nia&page=1             `;
