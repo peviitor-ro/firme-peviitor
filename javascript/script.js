@@ -35,6 +35,7 @@ function displayColaboratori(colaboratori) {
     const allToLowerCase = collaborator.name.toLowerCase().replace(/\s+/g, "");
 
     image.src = `./assets/${allToLowerCase}.png`;
+    image.alt = collaborator.name;
 
     image.onerror = () => {
       image.src = "./assets/logonotfound.png";
