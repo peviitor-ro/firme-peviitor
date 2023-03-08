@@ -16,7 +16,7 @@ searchInput.addEventListener("input", (e) => {
 fetch("https://api.peviitor.ro/v1/companies/?count=false")
   .then((response) => response.json())
   .then((data) => {
-    selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii`;
+    selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii !`;
     colaboratori = data.companies;
     displayColaboratori(colaboratori);
   })
@@ -36,7 +36,6 @@ function displayColaboratori(colaboratori) {
 
     image.src = `./assets/${allToLowerCase}.png`;
     image.alt = collaborator.name;
-    c;
 
     image.onerror = () => {
       image.src = "./assets/logonotfound.png";
