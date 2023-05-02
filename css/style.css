@@ -70,10 +70,12 @@ input::placeholder {
 }
 
 img {
-  width: 245px;
+  width: 214px;
   height: 150px;
   object-fit: contain;
   margin-bottom: 2px;
+  border: 2px solid black;
+  margin: 0 5px;
 }
 
 .card-container h2 {
