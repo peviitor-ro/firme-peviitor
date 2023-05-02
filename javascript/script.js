@@ -4,7 +4,7 @@ const cardContainer = document.querySelector(".card-container");
 const selectColaboratori = document.querySelector(".count-colaboratori");
 const searchInput = document.querySelector("#searchBar");
 let colaboratori = [];
-let logo = [];
+let logos = [];
 
 searchInput.addEventListener("input", (e) => {
   const dateInput = e.target.value.toLowerCase().replace(/\s+/g, "");
@@ -14,7 +14,7 @@ searchInput.addEventListener("input", (e) => {
   displayColaboratori(colaboratoriFiltrati);
 });
 
-fetch("https://api.peviitor.ro/v1/companies/?count=false")
+fetch("https://api.peviitor.ro/v1/logo/")
   .then((response) => response.json())
   .then((data) => {
     selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii !`;
@@ -36,12 +36,17 @@ function displayColaboratori(colaboratori) {
 
     const allToLowerCase = collaborator.name.toLowerCase().replace(/\s+/g, "");
 
-    image.src = `./assets/${allToLowerCase}.png`;
-    image.alt = collaborator.name;
+    if (collaborator.logo !== null) {
+      image.src = collaborator.logo;
+    } else {
+      image.src = `./assets/${allToLowerCase}.png`;
+    }
 
+    image.alt = collaborator.name;
     image.onerror = () => {
       image.src = "./assets/logonotfound.png";
     };
+
     title.textContent = allToLowerCase;
     link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1             `;
 
