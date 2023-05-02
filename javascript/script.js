@@ -4,6 +4,7 @@ const cardContainer = document.querySelector(".card-container");
 const selectColaboratori = document.querySelector(".count-colaboratori");
 const searchInput = document.querySelector("#searchBar");
 let colaboratori = [];
+let logo = [];
 
 searchInput.addEventListener("input", (e) => {
   const dateInput = e.target.value.toLowerCase().replace(/\s+/g, "");
@@ -18,6 +19,7 @@ fetch("https://api.peviitor.ro/v1/companies/?count=false")
   .then((data) => {
     selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii !`;
     colaboratori = data.companies;
+    console.log(data.companies);
     displayColaboratori(colaboratori);
   })
   .catch((error) => {

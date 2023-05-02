@@ -70,8 +70,8 @@ input::placeholder {
 }
 
 img {
-  width: 245px;
-  height: 150px;
+  max-width: 245px;
+  max-height: 150px;
   object-fit: contain;
   margin-bottom: 2px;
 }
