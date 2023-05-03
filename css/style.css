@@ -1,0 +1,119 @@
+body {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 1320px;
+}
+
+p {
+  text-align: start;
+  margin: 10px 0;
+  font-size: 15px;
+  color: #70757a;
+}
+
+h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 240px;
+  margin: 0 0 60px 0 !important;
+}
+
+.search-wrapper {
+  text-align: center;
+}
+
+input {
+  height: 40px;
+  width: 920px;
+  padding: 0 15px;
+  margin-top: 50px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+input::placeholder {
+  color: black;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+.card-container {
+  display: flex;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  max-width: 80%;
+}
+
+img {
+  width: 220px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 2px;
+  border: 3px solid black;
+  margin: 0 3px;
+}
+
+.card-container h2 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 1100px) {
+  input {
+    max-width: 675px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  input {
+    max-width: 440px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  input {
+    max-width: 300px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  input {
+    max-width: 250px;
+  }
+  h1 {
+    font-size: 15px;
+  }
+}
