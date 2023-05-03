@@ -69,7 +69,14 @@ input::placeholder {
   max-width: 80%;
 }
 
-
+img {
+  width: 220px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 2px;
+  border: 2px solid black;
+  margin: 0 3px;
+}
 
 .card-container h2 {
   text-align: center;
