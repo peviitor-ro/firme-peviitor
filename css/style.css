@@ -74,8 +74,8 @@ img {
   height: 150px;
   object-fit: contain;
   margin-bottom: 2px;
-  border: 2px solid black;
-  margin: 0 5px;
+  border: 1px solid black;
+  margin: 0 3px;
 }
 
 .card-container h2 {
