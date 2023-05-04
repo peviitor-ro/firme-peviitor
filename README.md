@@ -1,2 +1,0 @@
-# colaboratori-peviitor
-.
