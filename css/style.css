@@ -38,7 +38,7 @@ h2 {
 
 input {
   height: 40px;
-  width: 920px;
+  width: 960px;
   padding: 0 15px;
   margin-top: 50px;
   border-radius: 5px;
@@ -67,6 +67,7 @@ input::placeholder {
   justify-content: center;
   margin-top: 30px;
   max-width: 80%;
+  margin-left: 10px;
 }
 
 img {
