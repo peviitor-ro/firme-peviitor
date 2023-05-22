@@ -36,11 +36,15 @@ function displayColaboratori(colaboratori) {
 
     const allToLowerCase = collaborator.name.toLowerCase().replace(/\s+/g, "");
 
-    if (collaborator.logo !== null) {
-      image.src = collaborator.logo;
-    } else {
-      image.src = `./assets/${allToLowerCase}.png`;
-    }
+    const assetPath = `./assets/${allToLowerCase}.png`;
+
+    fetch(assetPath).then((response) => {
+      if (response.ok) {
+        image.src = assetPath;
+      } else {
+        image.src = collaborator.logo;
+      }
+    });
 
     image.alt = collaborator.name;
     image.onerror = () => {
