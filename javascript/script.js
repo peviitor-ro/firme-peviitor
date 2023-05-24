@@ -19,11 +19,7 @@ fetch("https://api.peviitor.ro/v1/logo/")
   .then((data) => {
     selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii !`;
     colaboratori = data.companies;
-    console.log(data.companies);
     displayColaboratori(colaboratori);
-  })
-  .catch((error) => {
-    console.log("Error:", error);
   });
 
 function displayColaboratori(colaboratori) {
