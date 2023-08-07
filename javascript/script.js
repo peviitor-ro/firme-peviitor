@@ -4,14 +4,21 @@ const cardContainer = document.querySelector(".card-container");
 const selectColaboratori = document.querySelector(".count-colaboratori");
 const searchInput = document.querySelector("#searchBar");
 let colaboratori = [];
-let logos = [];
+let onpage_colaboratori = [];
+let step = 12;
 
 searchInput.addEventListener("input", (e) => {
   const dateInput = e.target.value.toLowerCase().replace(/\s+/g, "");
-  const colaboratoriFiltrati = colaboratori.filter((colaborator) =>
-    colaborator.name.toLowerCase().replace(/\s+/g, "").includes(dateInput)
+  const colaboratoriFiltrati = onpage_colaboratori.filter((colaborator) =>
+    colaborator.textContent.toLowerCase().replace(/\s+/g, "").includes(dateInput)
   );
-  displayColaboratori(colaboratoriFiltrati);
+  cardContainer.innerHTML = "";
+  colaboratoriFiltrati.forEach((colaborator) => {
+    cardContainer.appendChild(colaborator);
+  });
+  if (colaboratoriFiltrati.length === 0) {
+    cardContainer.innerHTML = `<h1 class="not-found">Nu am gasit nimic pentru ${dateInput} !</h1>`;
+  }
 });
 
 fetch("https://api.peviitor.ro/v1/logo/")
@@ -20,17 +27,34 @@ fetch("https://api.peviitor.ro/v1/logo/")
     selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii !`;
     colaboratori = data.companies;
     displayColaboratori(colaboratori);
+  }).then(() => {
+    for (let i = 0; i < step; i++) {
+      cardContainer.appendChild(onpage_colaboratori[i]);
+    }
+
+    window.addEventListener("scroll", () => {
+      if (
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight
+      ) {
+        for (let i = step; i < step + 12; i++) {
+          if (i < onpage_colaboratori.length) {
+            cardContainer.appendChild(onpage_colaboratori[i]);
+          }
+        }
+        step += 12;
+      }
+    });
   });
 
 function displayColaboratori(colaboratori) {
-  cardContainer.innerHTML = "";
   colaboratori.forEach((collaborator) => {
     const div = document.createElement("div");
     const title = document.createElement("h2");
     const image = document.createElement("img");
     const link = document.createElement("a");
 
-    const allToLowerCase = collaborator.name.toLowerCase().replace(/\s+/g, "");
+    const allToLowerCase = collaborator.name.replace(/\s+/g, "");
 
     const assetPath = `./assets/${allToLowerCase}.png`;
 
@@ -53,8 +77,9 @@ function displayColaboratori(colaboratori) {
     link.appendChild(image);
     link.appendChild(title);
     div.appendChild(link);
-    cardContainer.appendChild(div);
+    onpage_colaboratori.push(div);
   });
 }
+
 
 //proba
