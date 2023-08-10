@@ -5,12 +5,15 @@ const selectColaboratori = document.querySelector(".count-colaboratori");
 const searchInput = document.querySelector("#searchBar");
 let colaboratori = [];
 let onpage_colaboratori = [];
-let step = 24;
+let step = 48;
 
 searchInput.addEventListener("input", (e) => {
   const dateInput = e.target.value.toLowerCase().replace(/\s+/g, "");
   const colaboratoriFiltrati = onpage_colaboratori.filter((colaborator) =>
-    colaborator.textContent.toLowerCase().replace(/\s+/g, "").includes(dateInput)
+    colaborator.textContent
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(dateInput)
   );
   cardContainer.innerHTML = "";
   colaboratoriFiltrati.forEach((colaborator) => {
@@ -27,7 +30,8 @@ fetch("https://api.peviitor.ro/v1/logo/")
     selectColaboratori.textContent = `avem scrapere pentru ${data.companies.length} de companii !`;
     colaboratori = data.companies;
     displayColaboratori(colaboratori);
-  }).then(() => {
+  })
+  .then(() => {
     for (let i = 0; i < step; i++) {
       cardContainer.appendChild(onpage_colaboratori[i]);
     }
@@ -37,12 +41,12 @@ fetch("https://api.peviitor.ro/v1/logo/")
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight - 10
       ) {
-        for (let i = step; i < step + 24; i++) {
+        for (let i = step; i < step + 48; i++) {
           if (i < onpage_colaboratori.length) {
             cardContainer.appendChild(onpage_colaboratori[i]);
           }
         }
-        step += 24;
+        step += 48;
       }
     });
   });
@@ -58,13 +62,11 @@ function displayColaboratori(colaboratori) {
 
     const assetPath = `./assets/${allToLowerCase}.png`;
 
-    fetch(assetPath).then((response) => {
-      if (response.ok) {
-        image.src = assetPath;
-      } else {
-        image.src = collaborator.logo;
-      }
-    });
+    if (collaborator.logo === null) {
+      image.src = assetPath;
+    } else {
+      image.src = collaborator.logo;
+    }
 
     image.alt = collaborator.name;
     image.onerror = () => {
@@ -80,6 +82,3 @@ function displayColaboratori(colaboratori) {
     onpage_colaboratori.push(div);
   });
 }
-
-
-//proba

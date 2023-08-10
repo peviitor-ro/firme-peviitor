@@ -1,5 +1,4 @@
 body {
-  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -89,13 +88,13 @@ a {
   color: black;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1215px) {
   input {
     max-width: 675px;
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 916px) {
   input {
     max-width: 440px;
   }
