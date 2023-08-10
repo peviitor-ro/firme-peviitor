@@ -35,9 +35,9 @@ fetch("https://api.peviitor.ro/v1/logo/")
     window.addEventListener("scroll", () => {
       if (
         window.scrollY + window.innerHeight >=
-        document.documentElement.scrollHeight
+        document.documentElement.scrollHeight - 10
       ) {
-        for (let i = step; i < step + 12; i++) {
+        for (let i = step; i < step + 24; i++) {
           if (i < onpage_colaboratori.length) {
             cardContainer.appendChild(onpage_colaboratori[i]);
           }
