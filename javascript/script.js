@@ -5,7 +5,7 @@ const selectColaboratori = document.querySelector(".count-colaboratori");
 const searchInput = document.querySelector("#searchBar");
 let colaboratori = [];
 let onpage_colaboratori = [];
-let step = 12;
+let step = 24;
 
 searchInput.addEventListener("input", (e) => {
   const dateInput = e.target.value.toLowerCase().replace(/\s+/g, "");
@@ -42,7 +42,7 @@ fetch("https://api.peviitor.ro/v1/logo/")
             cardContainer.appendChild(onpage_colaboratori[i]);
           }
         }
-        step += 12;
+        step += 24;
       }
     });
   });
