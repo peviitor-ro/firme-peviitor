@@ -57,6 +57,7 @@ function displayColaboratori(colaboratori) {
     const title = document.createElement("h2");
     const image = document.createElement("img");
     const link = document.createElement("a");
+    const titleLink = document.createElement("a");
 
     const allToLowerCase = collaborator.name.replace(/\s+/g, "");
 
@@ -74,11 +75,13 @@ function displayColaboratori(colaboratori) {
     };
 
     title.textContent = allToLowerCase;
-    link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1             `;
+    link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1`;
 
     link.appendChild(image);
-    link.appendChild(title);
     div.appendChild(link);
+    titleLink.href = `https://scraper-ui.netlify.app/src/${allToLowerCase}/index.html`;
+    titleLink.appendChild(title);
+    div.appendChild(titleLink);
     onpage_colaboratori.push(div);
   });
 }
