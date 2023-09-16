@@ -79,7 +79,7 @@ function displayColaboratori(colaboratori) {
 
     link.appendChild(image);
     div.appendChild(link);
-    titleLink.href = `https://scraper-ui.netlify.app/src/${allToLowerCase}/index.html`;
+    titleLink.href = `https://scrapers.peviitor.ro/src/${allToLowerCase}/index.html`;
     titleLink.appendChild(title);
     div.appendChild(titleLink);
     onpage_colaboratori.push(div);
