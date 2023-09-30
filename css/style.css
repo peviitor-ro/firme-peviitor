@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  width: 1320px;
+  width: 1380px;
 }
 
 p {
@@ -30,6 +30,12 @@ h2 {
   width: 240px;
   margin: 0 0 60px 0 !important;
 }
+
+#searchBar::placeholder {
+  color: grey;
+}
+
+
 
 .search-wrapper {
   text-align: center;
@@ -52,10 +58,37 @@ input::placeholder {
 .sticky {
   position: -webkit-sticky;
   position: sticky;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
   top: 0;
-  background-color: white;
-  border-bottom: 2px solid black;
+  left: 0 !important;
+  right: 0 !important;
+  background-color: rgb(247, 242, 242);
+  border-radius: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.left-side {
+  width: 25%;
+  height: auto;
+  margin-right: 20px;
+}
+
+.right-input {
+  flex: 1;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 40px;
+  align-self: flex-start;
+}
+
+
 
 .card-container {
   display: flex;
@@ -66,6 +99,7 @@ input::placeholder {
   justify-content: center;
   margin-top: 30px;
   max-width: 80%;
+  gap: 20px;
   margin-left: 10px;
 }
 
@@ -76,7 +110,21 @@ img {
   margin-bottom: 2px;
   border: 2px solid black;
   margin: 0 3px;
+  border-radius: 20px; 
+  padding: 10px;
 }
+
+.logo {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  display: inline;
+  vertical-align: middle;
+}
+
 
 .card-container h2 {
   text-align: center;
@@ -111,7 +159,7 @@ a {
 
 @media screen and (max-width: 400px) {
   input {
-    max-width: 250px;
+    max-width: 250px;       
   }
   h1 {
     font-size: 15px;
