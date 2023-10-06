@@ -17,4 +17,4 @@ jobs:
           password: ${{secrets.FTP_PASSWD}}
           method: ftp
           local_dir: .
-          remote_dir: /firme.peviitor.ro 
+          remote_dir: /
