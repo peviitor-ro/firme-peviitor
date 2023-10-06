@@ -27,9 +27,8 @@ h2 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 240px;
-  margin: 0 0 60px 0 !important;
-}
+  width: 110px;
+  font-size: 15px;}
 
 #searchBar::placeholder {
   color: grey;
@@ -92,24 +91,42 @@ input::placeholder {
 
 .card-container {
   display: flex;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
   margin-top: 30px;
   max-width: 80%;
   gap: 20px;
-  margin-left: 10px;
 }
 
+.firma {
+  text-align: center;
+}
+
+.firma img {
+  display: block; 
+  margin-bottom: 10px; 
+}
+
+.firma button {
+  text-align: center;
+  max-width: 130px;
+  overflow-wrap: break-word;
+  border: none;
+  background-color: inherit;
+}
+
+.firma button:hover {
+  background-color: #ff0000;
+}
+
+
 img {
-  width: 220px;
-  height: 150px;
+  width: 130px;
+  height: 90px;
   object-fit: contain;
   margin-bottom: 2px;
   border: 2px solid black;
-  margin: 0 3px;
   border-radius: 20px; 
   padding: 10px;
 }
@@ -123,12 +140,6 @@ img {
   border-radius: 0;
   display: inline;
   vertical-align: middle;
-}
-
-
-.card-container h2 {
-  text-align: center;
-  margin-top: 5px;
 }
 
 a {
