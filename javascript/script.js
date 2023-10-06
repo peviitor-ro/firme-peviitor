@@ -53,11 +53,12 @@ fetch("https://api.peviitor.ro/v1/logo/")
 
 function displayColaboratori(colaboratori) {
   colaboratori.forEach((collaborator) => {
-    const div = document.createElement("div");
-    const title = document.createElement("h2");
+    const firmaDiv = document.createElement("div");
+    firmaDiv.classList.add("firma"); 
+
+    const button = document.createElement("button");
     const image = document.createElement("img");
     const link = document.createElement("a");
-    const titleLink = document.createElement("a");
 
     const allToLowerCase = collaborator.name.replace(/\s+/g, "");
 
@@ -74,14 +75,17 @@ function displayColaboratori(colaboratori) {
       image.src = "./assets/logonotfound.png";
     };
 
-    title.textContent = allToLowerCase;
+    button.textContent = allToLowerCase;
+    button.id = allToLowerCase;
+    button.onclick = function () {
+      window.location.href = link.href;
+    };
+
     link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1`;
 
     link.appendChild(image);
-    div.appendChild(link);
-    titleLink.href = `https://scrapers.peviitor.ro/src/${allToLowerCase}/index.html`;
-    titleLink.appendChild(title);
-    div.appendChild(titleLink);
-    onpage_colaboratori.push(div);
+    firmaDiv.appendChild(link);
+    firmaDiv.appendChild(button);
+    onpage_colaboratori.push(firmaDiv);
   });
 }
