@@ -81,7 +81,7 @@ function displayColaboratori(colaboratori) {
       window.location.href = link.href;
     };
 
-    link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1`;
+    link.href = `https://scrapers.peviitor.ro/src/${allToLowerCase}/index.html`;
 
     link.appendChild(image);
     firmaDiv.appendChild(link);
