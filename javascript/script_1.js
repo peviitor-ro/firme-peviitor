@@ -7,6 +7,17 @@ let colaboratori = [];
 let onpage_colaboratori = [];
 let step = 48;
 
+let last_known_scroll_position = 0;
+window.addEventListener("scroll", () => {
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  if (st > last_known_scroll_position) {
+    document.querySelector(".sticky").classList.add("translate");
+  } else {
+    document.querySelector(".sticky").classList.remove("translate");
+  }
+  last_known_scroll_position = st <= 0 ? 0 : st;
+});
+
 searchInput.addEventListener("input", (e) => {
   const dateInput = e.target.value.toLowerCase().replace(/\s+/g, "");
   const colaboratoriFiltrati = onpage_colaboratori.filter((colaborator) =>
@@ -53,14 +64,15 @@ fetch("https://api.peviitor.ro/v1/logo/")
 
 function displayColaboratori(colaboratori) {
   colaboratori.forEach((collaborator) => {
+    const allToLowerCase = collaborator.name.replace(/\s+/g, "");
+
     const firmaDiv = document.createElement("div");
-    firmaDiv.classList.add("firma"); 
+    firmaDiv.classList.add("firma");
 
     const button = document.createElement("button");
     const image = document.createElement("img");
     const link = document.createElement("a");
-
-    const allToLowerCase = collaborator.name.replace(/\s+/g, "");
+    link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1`;
 
     const assetPath = `./assets/${allToLowerCase}.png`;
 
@@ -78,10 +90,8 @@ function displayColaboratori(colaboratori) {
     button.textContent = allToLowerCase;
     button.id = allToLowerCase;
     button.onclick = function () {
-      window.location.href = link.href;
+      window.location.href = `https://scrapers.peviitor.ro/src/${allToLowerCase}/index.html`;
     };
-
-    link.href = `https://scrapers.peviitor.ro/src/${allToLowerCase}/index.html`;
 
     link.appendChild(image);
     firmaDiv.appendChild(link);

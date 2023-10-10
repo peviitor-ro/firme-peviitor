@@ -1,11 +1,11 @@
 body {
-  display: flex;
-  justify-content: center;
   background-color: #f5f5f5;
 }
 
 * {
   font-family: "Oswald", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -14,7 +14,6 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  width: 1380px;
 }
 
 p {
@@ -43,7 +42,6 @@ input {
   height: 40px;
   width: 960px;
   padding: 0 15px;
-  margin-top: 50px;
   border-radius: 5px;
   font-size: 15px;
   font-weight: 700;
@@ -56,37 +54,32 @@ input::placeholder {
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 20px;
+  width: 100%;
+  padding: 50px 0;
   top: 0;
   left: 0 !important;
   right: 0 !important;
   background-color:#dddcdc;
-  border-radius: 20px;
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
+  transform: translateY(0);
+  transition: all 0.3s ease;
 }
 
 .left-side {
-  width: 25%;
   height: auto;
   margin-right: 20px;
 }
 
 .right-input {
-  flex: 1;
   height: 30px;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 5px;
-  margin-bottom: 40px;
-  align-self: flex-start;
 }
-
-
 
 .card-container {
   display: flex;
@@ -136,7 +129,7 @@ img {
   height: 90px;
   object-fit: contain;
   margin-bottom: 2px;
-  border: 2px solid black;
+  border: 1px solid #000;
   border-radius: 20px; 
   padding: 10px;
 }
@@ -157,6 +150,10 @@ a {
   color: black;
 }
 
+.translate{
+  transform: translateY(-100%);
+}
+
 @media screen and (max-width: 1215px) {
   input {
     max-width: 675px;
@@ -170,11 +167,33 @@ a {
 }
 
 @media screen and (max-width: 620px) {
-  input {
-    max-width: 300px;
-  }
+
   h1 {
     font-size: 18px;
+  }
+
+  .sticky {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 20px;
+  }
+  .card-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .firma img {
+    width: 300px;
+    height: 200px;
+    border: 0.5px solid black;
+  }
+
+  .firma button {
+    font-size: large;
+    max-width: 300px;
+    padding: 10px 20px;
   }
 }
 
