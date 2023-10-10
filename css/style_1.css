@@ -35,8 +35,6 @@ h2 {
   color: grey;
 }
 
-
-
 .search-wrapper {
   text-align: center;
 }
@@ -127,7 +125,11 @@ input::placeholder {
 
 }
 
-
+.firma img:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
 img {
   width: 130px;
