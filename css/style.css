@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: #dddcdc;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -63,7 +63,7 @@ input::placeholder {
   top: 0;
   left: 0 !important;
   right: 0 !important;
-  background-color: rgb(247, 242, 242);
+  background-color:#dddcdc;
   border-radius: 20px;
   z-index: 100;
   display: flex;
@@ -114,11 +114,18 @@ input::placeholder {
   overflow-wrap: break-word;
   border: none;
   background-color: inherit;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.3s ease; 
 }
 
 .firma button:hover {
-  background-color: #ff0000;
+  background-color: #25c389;
+  color: white;
+  cursor: pointer;
+
 }
+
 
 
 img {
