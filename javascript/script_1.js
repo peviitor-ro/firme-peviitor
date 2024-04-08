@@ -72,7 +72,7 @@ function displayColaboratori(colaboratori) {
     const button = document.createElement("button");
     const image = document.createElement("img");
     const link = document.createElement("a");
-    link.href = `https://peviitor.ro/rezultate?q=${allToLowerCase}&country=Rom%C3%A2nia&page=1`;
+    link.href = `https://peviitor.ro/#/rezultate`;
 
     const assetPath = `./assets/${allToLowerCase}.png`;
 
